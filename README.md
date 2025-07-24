@@ -7,10 +7,11 @@ This repository contains my submission for the **TPXimpactDX technical challenge
 ## Part 1
 
 Recreation a **Josef Müller-Brockmann** poster using **HTML** and  **CSS**.
+- Responsive design using flex boxes to work on mobiles and wide screen whilst sill maintaing the spirit of the original poster design. 
 
 ## Part 2
 
-A built using **HTML**, **CSS**, and **JavaScript**. The stopwatch includes the following features:
+A stopwatch built using **HTML**, **CSS**, and **JavaScript**. The stopwatch includes the following features:
 
 - **Time Display** in `HH:MM:SS:CC` format (hours, minutes, seconds, centiseconds)
 - **Start**: Starts or resumes the timer

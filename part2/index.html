@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stopwatch Poster Layout</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+      display: flex;
+      justify-content: center;
+      background-color: #F7F7F7;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      max-width: 900px;
+      height: 100vh;
+    }
+
+    .white {
+      background-color: #F7F7F7;
+      color: #222222;
+      flex: 6;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .white-content {
+      z-index: 99;
+      align-self: flex-start;
+      margin-top: 65vh;
+      width: 100%;
+      text-align: left;
+      padding-left: 10px;
+    }
+
+    #time-display {
+      font-size: 2rem;
+      margin-top: 0.5rem;
+    }
+
+    .black {
+      background-color: #1A1A1A;
+      color: #EDEDED;
+      flex: 4;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-left: 5px;
+    }
+
+    .black-content {
+      width: 100%;
+      text-align: left;
+      overflow-y: auto;
+    }
+
+    .black-content p {
+      margin: 1rem 0;
+    }
+
+    .black-footer {
+      padding-top: 5px;
+      color: #aaa;
+    }
+
+    .top-right-boxes {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .button {
+      width: 20vw;
+      max-width: 150px;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .red {
+      background-color: #cc2d2d;
+      color: white;
+    }
+
+    .blue {
+      background-color: #2a5c9e;
+      color: white;
+    }
+
+    .yellow {
+      background-color: #c6ab26;
+      color: #222;
+    }
+
+    .green {
+      background-color: #38b038;
+      color: #fff;
+    }
+
+    .violet {
+      background-color: #8e30ba;
+      color: #fff;
+    }
+
+    .large-text {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
+
+    .small-text {
+      font-size: clamp(0.75rem, 1.5vw, 1rem);
+    }
+
+    .xsmall-text {
+      font-size: clamp(0.8rem, 1vw, 1rem);
+    }
+
+    .button:hover {
+      outline: 2px solid rgba(0, 0, 0, 0.2);
+      filter: brightness(1.05);
+    }
+
+    .button:focus-visible {
+      outline: 3px solid #ffffff;
+      z-index: 99;
+    }
+
+    .lap-list {
+      list-style: none;
+      padding-left: 0;
+      font-size: 0.9rem;
+      overflow-y: auto;
+      max-height: 95vh;
+      padding-right: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="white">
+      <div class="white-content">
+        <h1 class="large-text">A stopwatch.</h1>
+        <div id="time-display">00.00.00.00</div>
+        <div id="text-time-display"></div>
+      </div>
+
+      <div class="top-right-boxes">
+        <button id="startBtn" class="button green" aria-label="start">START</button>
+        <button id="pauseBtn" class="button yellow" aria-label="pause">PAUSE</button>
+        <button id="resetBtn" class="button red" aria-label="reset">RESET</button>
+        <button id="lapBtn" class="button blue" aria-label="lap">LAP</button>
+        <button id="clearBtn" class="button violet" aria-label="clear">CLEAR</button>
+      </div>
+    </div>
+
+    <section class="black" role="complementary" aria-label="Lap list section">
+      <div class="black-content">
+        <ul id="lap-list" class="lap-list"></ul>
+        <div class="black-footer">
+          <p id="lapFtr" class="xsmall-text">Lap history will show here.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
