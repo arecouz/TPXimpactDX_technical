@@ -1,6 +1,6 @@
 # TPXimpactDX Technical Challenge
 
-This repository contains my submission for the **TPXimpactDX technical challenge**.
+This repository contains my submission for the **TPXimpactDX technical challenge**. 
 
 ---
 
@@ -26,3 +26,12 @@ A stopwatch built using **HTML**, **CSS**, and **JavaScript**. Features include:
 - No external dependencies or frameworks used  
 
 **Live demo:** [Part 2](https://arecouz.github.io/TPXimpactDX_technical/part2/)
+
+
+---
+
+### How to Run Locally
+
+This project contains only static files (HTML, CSS, and JavaScript). You can open it directly in your browser.
+
+No build steps or package installations are required. 
