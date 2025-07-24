@@ -7,22 +7,26 @@
   <title>Poster Recreation1 Task</title>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-
   <style>
-    body,
-    html {
-      margin: 0;
-      height: 100vh;
-      width: 100vw;
-      display: flex;
-      flex-direction: row;
-      font-family: 'IBM Plex Sans', sans-serif;
+    * {
+      box-sizing: border-box;
     }
 
-    .row {
+    body {
+      margin: 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+      background-color: #F7F7F7;
       display: flex;
-      align-items: center;
       justify-content: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      max-width: 1200px;
+      height: 100vh;
+      max-height: 1200px;
     }
 
     .white {
@@ -30,9 +34,12 @@
       color: #222222;
       flex: 6;
       position: relative;
+      display: flex;
+      flex-direction: column;
     }
 
     .white-content {
+      z-index: 1;
       align-self: flex-start;
       margin-top: 65vh;
       width: 100%;
@@ -47,7 +54,6 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      /* Push content to bottom */
       padding-left: 5px;
     }
 
@@ -61,10 +67,9 @@
     }
 
     .black-footer {
-      padding-top: 5px;
+      padding-top: 55px;
       color: #aaa;
     }
-
 
     .top-right-boxes {
       position: absolute;
@@ -75,8 +80,8 @@
     }
 
     .box {
-      width: 23vw;
-      max-width: 80px;
+      width: 20vw;
+      max-width: 180px;
       aspect-ratio: 1 / 1;
       display: flex;
       align-items: center;
@@ -86,19 +91,16 @@
 
     .red {
       background-color: #CC2D2D;
-      /* rich muted red */
       color: white;
     }
 
     .blue {
       background-color: #2A5C9E;
-      /* deep muted blue */
       color: white;
     }
 
     .yellow {
       background-color: #E0C341;
-      /* warm mustard yellow */
       color: #222222;
     }
 
@@ -111,36 +113,38 @@
     }
 
     .xsmall-text {
-      font-size: clamp(0.8rem, 1, 1rem);
+      font-size: clamp(0.8rem, 1vw, 1rem);
+      font-style: italic;
     }
   </style>
-
 </head>
 
 <body>
-  <div class="row white">
-    <h1 class="white-content large-text">
-      Richard Gräham-Couzens
-    </h1>
-    <div class="top-right-boxes">
-      <div class="box red"></div>
-      <div class="box blue"></div>
-      <div class="box yellow"></div>
-    </div>
-  </div>
-  <section class="row black">
-    <div class="black-content small-text">
-      <hr>
-      <p>This is my submission for part one of the technical.</p>
-      <hr>
-      <p>It is a recreation of a Josef Müller-Brockmann poster.</p>
-      <hr>
-      <p>It is a fully responsive design using flex boxes to work on mobiles and wide screens.</p>
-      <div class="black-footer">
-        <p class="xsmall-text">*a11y-compliant text colors and zoomable beyond 200%.</p>
+  <div class="container">
+    <div class="white">
+      <h1 class="white-content large-text">
+        Richard Gräham-Couzens
+      </h1>
+      <div class="top-right-boxes">
+        <div class="box blue"></div>
+        <div class="box yellow"></div>
+        <div class="box red"></div>
       </div>
     </div>
-  </section>
+    <section class="black">
+      <div class="black-content small-text">
+        <hr>
+        <p>This is my submission for part one of the technical.</p>
+        <hr>
+        <p>It is a recreation of a Josef Müller-Brockmann poster.</p>
+        <hr>
+        <p>It responsive and maintains the general layout of the original poster throughout all screen sizes.</p>
+        <div class="black-footer">
+          <p class="xsmall-text">something small go here.</p>
+        </div>
+      </div>
+    </section>
+  </div>
 </body>
 
 </html>
